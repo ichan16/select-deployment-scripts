@@ -5,7 +5,14 @@
 
 arr=("main*.js" "scripts.*js" "1.*.js" "2.*.js" "3.*.js" "4.*.js" "5.*.js" "6.*.js" "7.*.js" "8.*.js" "9.*.js" "10.*.js")
 
+
 ENV=$1select
+
+if [ "$1" = "stg2" ]
+then
+	ENV=stgselect2
+fi
+
 
 GSPATH=gs://$ENV.airasia.com/booking
 

@@ -11,8 +11,11 @@ DATE=`date '+%Y%m%d_%H%M'`
 
 if [ "$1" == "pp" ] 
 then
-    ng build --configuration=pp --prod --base-href=/booking/
+    ng build --configuration=sit --prod --base-href=/booking/
 elif [ "$1" = "stg" ]
+then
+    ng build --configuration=sit --prod --base-href=/booking/
+elif [ "$1" = "stg2" ]
 then
     ng build --configuration=sit --prod --base-href=/booking/
 elif [ "$1" = "prod" ]
@@ -26,7 +29,7 @@ cd $SH_PATH;
 
 
 #----- ask deployment if preprod or staging
-if [ "$1" == "pp" ] || [ "$1" == "stg" ]
+if [ "$1" == "pp" ] || [ "$1" == "stg" || [ "$1" == "stg2" ]
 then 
 	## ask question to deploy it after finishing build
 	while true; do
